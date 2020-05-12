@@ -1,6 +1,7 @@
 """
 Python Web Development Techdegree
 Project 1 - Number Guessing Game
+by juventina ibarra
 --------------------------------
 
 For this first project we will be using Workspaces. 
