@@ -3,34 +3,37 @@ Python Web Development Techdegree
 Project 1 - Number Guessing Game
 by juventina ibarra
 --------------------------------
-
-For this first project we will be using Workspaces. 
-
-NOTE: If you strongly prefer to work locally on your own computer, you can totally do that by clicking: File -> Download Workspace in the file menu after you fork the snapshot of this workspace.
-
 """
-
 import random
 
-
 def start_game():
-    """Psuedo-code Hints
+  print("Welcome to the Number Guessing Game") #prints welcome message
+
+  x_number = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) #variable that stores a random number from an array
+  attemps = 0 #variable that stores number of atemps
+
+  while True:
+    attemps += 1
+    try:
+      chosen_number = int(input("Choose a number from 1 to 10: "))
+      if chosen_number > 10 or chosen_number < 1:
+        raise ValueError("choose a number from 1 to 10")
+      if chosen_number == x_number:
+        print("you won")
+        print("You got it!!! Your number of attemps was {}".format(attemps))
+        print("Game is over")
+        break
+      elif chosen_number > x_number:
+        print("Its lower")
+        continue
+      elif chosen_number < x_number:
+        print("Its higher")
+        continue
+    except ValueError:
+      print("oops it wasnt a valid number TRY AGAIN")
     
-    When the program starts, we want to:
-    ------------------------------------
-    1. Display an intro/welcome message to the player.
-    2. Store a random number as the answer/solution.
-    3. Continuously prompt the player for a guess.
-      a. If the guess greater than the solution, display to the player "It's lower".
-      b. If the guess is less than the solution, display to the player "It's higher".
+      
     
-    4. Once the guess is correct, stop looping, inform the user they "Got it"
-         and show how many attempts it took them to get the correct number.
-    5. Let the player know the game is ending, or something that indicates the game is over.
-    
-    ( You can add more features/enhancements if you'd like to. )
-    """
-    # write your code inside this function.
 
 
 
