@@ -11,6 +11,7 @@ def start_game():
 
   x_number = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) #variable that stores a random number from an array
   attemps = 0 #variable that stores number of atemps
+  
 
   while True:
     attemps += 1
@@ -22,7 +23,15 @@ def start_game():
         print("you won")
         print("You got it!!! Your number of attemps was {}".format(attemps))
         print("Game is over")
-        break
+        high_score = attemps
+        if input("Would you like to play again? y/n ") == "y":
+          print("The HIGHSCORE is {}".format(high_score))
+          x_number = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) #variable that stores a random number from an array
+          attemps = 0
+          continue 
+        else:
+          print("GOOD BYE")
+          break
       elif chosen_number > x_number:
         print("Its lower")
         continue
@@ -31,6 +40,7 @@ def start_game():
         continue
     except ValueError:
       print("oops it wasnt a valid number TRY AGAIN")
+    
     
       
     
